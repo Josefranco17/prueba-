@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+</body><!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -17,14 +18,17 @@
             text-align: center;
             padding: 2rem 1rem 1rem 1rem;
             position: relative;
+            background: rgba(0,0,0,0.3);
         }
-        header::after {
-            content: '';
-            display: block;
-            margin: 1rem auto 0 auto;
-            width: 200px;
-            height: 2px;
-            background: repeating-linear-gradient(90deg, #fff, #fff 10px, transparent 10px, transparent 20px);
+        .header-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #ffe600;
+            box-shadow: 0 0 30px #1a2980;
+            margin-bottom: 1rem;
+            background: #fff;
         }
         h1 {
             font-size: 3rem;
@@ -38,17 +42,6 @@
             color: #ffe600;
             text-shadow: 1px 1px 0 #e52d27;
         }
-        .spiderman-img {
-            display: block;
-            margin: 2rem auto 1rem auto;
-            border: 5px solid #ffe600;
-            border-radius: 50%;
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            box-shadow: 0 0 30px #1a2980;
-            background: #fff;
-        }
         .bio {
             max-width: 600px;
             margin: 2rem auto;
@@ -59,30 +52,55 @@
             line-height: 1.5;
         }
         .logros {
-            max-width: 600px;
+            max-width: 800px;
             margin: 2rem auto;
-            background: rgba(255,255,255,0.1);
-            padding: 1rem;
-            border-radius: 1rem;
+            background: rgba(255,255,255,0.08);
+            padding: 2rem 1rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(26,41,128,0.2);
         }
         .logros h3 {
             color: #ffe600;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             text-shadow: 1px 1px 0 #1a2980;
+            text-align: center;
+            font-size: 2rem;
         }
-        .logros ul {
-            list-style: none;
-            padding: 0;
+        .logros-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
         }
-        .logros li {
-            margin-bottom: 0.5rem;
-            padding-left: 2rem;
+        .logro-card {
+            background: rgba(229,45,39,0.85);
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            min-width: 220px;
+            max-width: 260px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(26,41,128,0.15);
             position: relative;
+            transition: transform 0.2s;
         }
-        .logros li::before {
-            content: "🕸️";
-            position: absolute;
-            left: 0;
+        .logro-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 24px #1a2980;
+        }
+        .logro-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .logro-title {
+            font-size: 1.1rem;
+            color: #ffe600;
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+        .logro-desc {
+            font-size: 1rem;
+            color: #fff;
         }
         footer {
             text-align: center;
@@ -93,14 +111,23 @@
             bottom: 0;
             font-size: 1rem;
         }
+        @media (max-width: 700px) {
+            .logros-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            .logro-card {
+                min-width: 80%;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <img class="header-img" src="https://pbs.twimg.com/media/FL1nQw4XwAAgQ6y?format=jpg&name=large" alt="Julián Álvarez Spiderman">
         <h1>Julián Álvarez</h1>
         <h2>¡El Spiderman del fútbol!</h2>
     </header>
-    <img class="spiderman-img" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Juli%C3%A1n_%C3%81lvarez_2022.jpg" alt="Julián Álvarez">
     <section class="bio">
         <p>
             Julián Álvarez, como Spiderman, combina agilidad, velocidad y reflejos sobrehumanos. Nacido en Calchín, Córdoba, este delantero argentino ha tejido su camino desde River Plate hasta conquistar Europa con el Manchester City. 
@@ -110,15 +137,32 @@
     </section>
     <section class="logros">
         <h3>Logros Destacados 🕷️</h3>
-        <ul>
-            <li>Campeón del Mundo 2022 con Argentina</li>
-            <li>Campeón de la Premier League con Manchester City</li>
-            <li>Goleador en River Plate</li>
-            <li>Héroe en partidos decisivos, como Spiderman en acción</li>
-        </ul>
+        <div class="logros-cards">
+            <div class="logro-card">
+                <span class="logro-icon">🏆</span>
+                <div class="logro-title">Campeón del Mundo 2022</div>
+                <div class="logro-desc">Con la Selección Argentina, Julián fue clave en la conquista del Mundial de Qatar.</div>
+            </div>
+            <div class="logro-card">
+                <span class="logro-icon">👑</span>
+                <div class="logro-title">Premier League</div>
+                <div class="logro-desc">Ganó la liga inglesa con Manchester City, demostrando su talento en Europa.</div>
+            </div>
+            <div class="logro-card">
+                <span class="logro-icon">⚽</span>
+                <div class="logro-title">Goleador en River Plate</div>
+                <div class="logro-desc">Figura y máximo artillero en el club de sus orígenes, River Plate.</div>
+            </div>
+            <div class="logro-card">
+                <span class="logro-icon">🕸️</span>
+                <div class="logro-title">Héroe en partidos decisivos</div>
+                <div class="logro-desc">Como Spiderman, aparece en los momentos clave para salvar a su equipo.</div>
+            </div>
+        </div>
     </section>
     <footer>
         Página creada por un fan de Julián Álvarez y Spiderman 🕸️
     </footer>
 </body>
+</html>
 </html>
