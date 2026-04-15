@@ -305,4 +305,210 @@
     max-width: 900px;
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
 }
+</style><!-- En <head> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    background: #f5faff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+.evento-box {
+    border: 2px solid #1976d2;
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 24px;
+    margin: 32px auto;
+    max-width: 900px;
+    width: 95%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto 24px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+h2 {
+    color: #1976d2;
+    margin-top: 0;
+}
+ul, dl {
+    font-size: 1.05em;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+}
+.oradores-list {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.orador-card {
+    background: #f5faff;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    flex: 1 1 180px;
+    min-width: 180px;
+    max-width: 220px;
+    margin-bottom: 16px;
+}
+.orador-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 2px solid #1976d2;
+}
+dt {
+    font-weight: bold;
+    color: #1976d2;
+    margin-top: 12px;
+}
+dd {
+    margin-left: 0;
+    margin-bottom: 8px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .evento-box {
+        padding: 14px 4vw;
+        margin: 16px 0;
+    }
+    .container {
+        padding: 0;
+        margin: 0 0 16px 0;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    ul, dl {
+        font-size: 1em;
+        padding-left: 12px;
+    }
+    .oradores-list {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    .orador-card {
+        min-width: 0;
+        max-width: 100%;
+        padding: 10px;
+    }
+    .orador-card img {
+        width: 80px;
+        height: 80px;
+    }
+}
 </style>
+<!-- Sección de Actividades Destacadas (colócala dentro de .evento-box) -->
+<section class="actividades-destacadas">
+    <div class="container">
+      <h2>Actividades Destacadas</h2>
+      <div class="cards-actividades">
+        <div class="actividad-card">
+          <div class="icono-actividad">
+            <!-- Ícono de charla -->
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="22" fill="#1976d2"/>
+              <path d="M16 20h16v2H16zM16 26h10v2H16z" fill="#fff"/>
+              <circle cx="34" cy="27" r="2" fill="#fff"/>
+            </svg>
+          </div>
+          <h3>Charla Magistral</h3>
+          <p>Expertos comparten tendencias en inteligencia artificial y tecnología.</p>
+        </div>
+        <div class="actividad-card">
+          <div class="icono-actividad">
+            <!-- Ícono de taller -->
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="8" y="12" width="32" height="24" rx="6" fill="#1976d2"/>
+              <rect x="14" y="18" width="20" height="12" rx="3" fill="#fff"/>
+              <rect x="20" y="24" width="8" height="2" rx="1" fill="#1976d2"/>
+            </svg>
+          </div>
+          <h3>Taller Práctico</h3>
+          <p>Aprende a crear tu primera app web con tecnologías modernas.</p>
+        </div>
+        <div class="actividad-card">
+          <div class="icono-actividad">
+            <!-- Ícono de networking -->
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="16" cy="24" r="6" fill="#1976d2"/>
+              <circle cx="32" cy="24" r="6" fill="#1976d2"/>
+              <rect x="16" y="22" width="16" height="4" rx="2" fill="#fff"/>
+            </svg>
+          </div>
+          <h3>Networking</h3>
+          <p>Conecta con profesionales y comparte tus ideas innovadoras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CSS (agrega a tu <style>) -->
+  <style>
+  .actividades-destacadas {
+    margin-bottom: 32px;
+  }
+  .cards-actividades {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .actividad-card {
+    background: #fff;
+    border: 2px solid #1976d2;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+    padding: 20px 16px;
+    width: 260px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+  }
+  .actividad-card:hover {
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.16);
+  }
+  .icono-actividad {
+    margin-bottom: 12px;
+  }
+  .actividad-card h3 {
+    color: #1976d2;
+    margin: 8px 0 6px 0;
+    font-size: 1.15em;
+    text-align: center;
+  }
+  .actividad-card p {
+    color: #222;
+    font-size: 1em;
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* Responsive para tarjetas */
+  @media (max-width: 700px) {
+    .cards-actividades {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    .actividad-card {
+      width: 95%;
+      max-width: 340px;
+      padding: 16px 8px;
+    }
+  }
+  </style>
