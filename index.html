@@ -1,168 +1,224 @@
-
-</body><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Julián Álvarez - Spiderman</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFest 2024 - Evento Tecnológico</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #e52d27 60%, #1a2980 100%);
-            color: #fff;
-            font-family: 'Bangers', cursive, Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
-            min-height: 100vh;
-            position: relative;
+            background: #f4f6fb;
+            color: #222;
         }
         header {
-            text-align: center;
+            background: #1a237e;
+            color: #fff;
             padding: 2rem 1rem 1rem 1rem;
-            position: relative;
-            background: rgba(0,0,0,0.3);
-        }
-        .header-img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid #ffe600;
-            box-shadow: 0 0 30px #1a2980;
-            margin-bottom: 1rem;
-            background: #fff;
-        }
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 0 #1a2980;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin: 0.5rem 0 0 0;
-            color: #ffe600;
-            text-shadow: 1px 1px 0 #e52d27;
-        }
-        .bio {
-            max-width: 600px;
-            margin: 2rem auto;
-            background: rgba(0,0,0,0.4);
-            padding: 1.5rem;
-            border-radius: 1rem;
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
-        .logros {
-            max-width: 800px;
-            margin: 2rem auto;
-            background: rgba(255,255,255,0.08);
-            padding: 2rem 1rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 4px 24px rgba(26,41,128,0.2);
-        }
-        .logros h3 {
-            color: #ffe600;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 0 #1a2980;
             text-align: center;
-            font-size: 2rem;
         }
-        .logros-cards {
+        nav {
+            background: #283593;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffb300;
+        }
+        .hero {
+            background: linear-gradient(90deg, #3949ab 60%, #ffb300 100%);
+            color: #fff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        .hero h1 {
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .agenda, .oradores, .registro {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #0001;
+            padding: 2rem;
+        }
+        .agenda h2, .oradores h2, .registro h2 {
+            margin-top: 0;
+            color: #3949ab;
+        }
+        .agenda-list {
+            list-style: none;
+            padding: 0;
+        }
+        .agenda-list li {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        .oradores-list {
             display: flex;
             flex-wrap: wrap;
+            gap: 2rem;
             justify-content: center;
-            gap: 1.5rem;
         }
-        .logro-card {
-            background: rgba(229,45,39,0.85);
-            border-radius: 1rem;
-            padding: 1.2rem 1.5rem;
-            min-width: 220px;
-            max-width: 260px;
+        .orador-card {
+            background: #f4f6fb;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px #0001;
+            padding: 1rem;
+            width: 200px;
             text-align: center;
-            box-shadow: 0 2px 12px rgba(26,41,128,0.15);
-            position: relative;
-            transition: transform 0.2s;
         }
-        .logro-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 24px #1a2980;
-        }
-        .logro-icon {
-            font-size: 2.5rem;
+        .orador-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
             margin-bottom: 0.5rem;
-            display: block;
         }
-        .logro-title {
-            font-size: 1.1rem;
-            color: #ffe600;
-            margin-bottom: 0.3rem;
-            font-weight: bold;
+        .registro form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin: auto;
         }
-        .logro-desc {
+        .registro input, .registro button {
+            padding: 0.7rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
             font-size: 1rem;
+        }
+        .registro button {
+            background: #3949ab;
             color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .registro button:hover {
+            background: #ffb300;
+            color: #222;
         }
         footer {
+            background: #1a237e;
+            color: #fff;
             text-align: center;
             padding: 1rem;
-            background: rgba(0,0,0,0.5);
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-            font-size: 1rem;
+            margin-top: 2rem;
         }
         @media (max-width: 700px) {
-            .logros-cards {
+            .oradores-list {
                 flex-direction: column;
                 align-items: center;
-            }
-            .logro-card {
-                min-width: 80%;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img class="header-img" src="https://pbs.twimg.com/media/FL1nQw4XwAAgQ6y?format=jpg&name=large" alt="Julián Álvarez Spiderman">
-        <h1>Julián Álvarez</h1>
-        <h2>¡El Spiderman del fútbol!</h2>
+        <h1>TechFest 2024</h1>
+        <p>15 de Octubre, Centro de Convenciones, Buenos Aires</p>
     </header>
-    <section class="bio">
-        <p>
-            Julián Álvarez, como Spiderman, combina agilidad, velocidad y reflejos sobrehumanos. Nacido en Calchín, Córdoba, este delantero argentino ha tejido su camino desde River Plate hasta conquistar Europa con el Manchester City. 
-            <br><br>
-            Así como Peter Parker protege Nueva York, Julián defiende los colores de su equipo con pasión y responsabilidad. ¡Con grandes goles, viene una gran responsabilidad!
-        </p>
-    </section>
-    <section class="logros">
-        <h3>Logros Destacados 🕷️</h3>
-        <div class="logros-cards">
-            <div class="logro-card">
-                <span class="logro-icon">🏆</span>
-                <div class="logro-title">Campeón del Mundo 2022</div>
-                <div class="logro-desc">Con la Selección Argentina, Julián fue clave en la conquista del Mundial de Qatar.</div>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#oradores">Oradores</a>
+        <a href="#registro">Registro</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <main>
+        <section class="hero" id="inicio">
+            <h1>¡Bienvenido a TechFest 2024!</h1>
+            <p>El evento donde la innovación y la tecnología se encuentran. Charlas, talleres y networking con líderes de la industria.</p>
+            <a href="#registro" style="display:inline-block;margin-top:1.5rem;padding:1rem 2rem;background:#ffb300;color:#222;border-radius:5px;font-weight:bold;text-decoration:none;">¡Regístrate ahora!</a>
+        </section>
+        <section class="agenda" id="agenda">
+            <h2>Agenda</h2>
+            <ul class="agenda-list">
+                <li><strong>09:00</strong> - Apertura y bienvenida</li>
+                <li><strong>10:00</strong> - Keynote: El futuro de la IA</li>
+                <li><strong>11:30</strong> - Taller: Desarrollo Web Moderno</li>
+                <li><strong>14:00</strong> - Panel: Mujeres en Tecnología</li>
+                <li><strong>16:00</strong> - Networking & Coffee</li>
+                <li><strong>17:00</strong> - Cierre</li>
+            </ul>
+        </section>
+        <section class="oradores" id="oradores">
+            <h2>Oradores</h2>
+            <div class="oradores-list">
+                <div class="orador-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Orador 1">
+                    <h3>Juan Pérez</h3>
+                    <p>Especialista en IA</p>
+                </div>
+                <div class="orador-card">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Oradora 2">
+                    <h3>María Gómez</h3>
+                    <p>Desarrolladora Web</p>
+                </div>
+                <div class="orador-card">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Orador 3">
+                    <h3>Carlos Ruiz</h3>
+                    <p>Emprendedor Tech</p>
+                </div>
             </div>
-            <div class="logro-card">
-                <span class="logro-icon">👑</span>
-                <div class="logro-title">Premier League</div>
-                <div class="logro-desc">Ganó la liga inglesa con Manchester City, demostrando su talento en Europa.</div>
-            </div>
-            <div class="logro-card">
-                <span class="logro-icon">⚽</span>
-                <div class="logro-title">Goleador en River Plate</div>
-                <div class="logro-desc">Figura y máximo artillero en el club de sus orígenes, River Plate.</div>
-            </div>
-            <div class="logro-card">
-                <span class="logro-icon">🕸️</span>
-                <div class="logro-title">Héroe en partidos decisivos</div>
-                <div class="logro-desc">Como Spiderman, aparece en los momentos clave para salvar a su equipo.</div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        Página creada por un fan de Julián Álvarez y Spiderman 🕸️
+        </section>
+        <section class="registro" id="registro">
+            <h2>Registro</h2>
+            <form>
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <button type="submit">Registrarme</button>
+            </form>
+        </section>
+    </main>
+    <footer id="contacto">
+        &copy; 2024 TechFest | Síguenos en 
+        <a href="#" style="color:#ffb300;text-decoration:none;">Twitter</a> &bull; 
+        <a href="#" style="color:#ffb300;text-decoration:none;">Instagram</a>
     </footer>
 </body>
 </html>
+<section class="agenda" id="agenda">
+    <div class="container">
+        <!-- contenido de agenda -->
+    </div>
+</section><!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ... tus etiquetas <meta> y <link> ... -->
+</head>
+<body>
+    <main>
+        <!-- Otras secciones aquí -->
+
+        <section class="agenda" id="agenda">
+            <div class="container">
+                <!-- contenido de agenda -->
+            </div>
+        </section>
+
+        <!-- Más secciones aquí -->
+    </main>
+    <footer id="contacto">
+        &copy; 2024 TechFest | Síguenos en 
+        <a href="#" style="color:#ffb300;text-decoration:none;">Twitter</a> &bull; 
+        <a href="#" style="color:#ffb300;text-decoration:none;">Instagram</a>
+    </footer>
+</body>
 </html>
